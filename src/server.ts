@@ -15,9 +15,6 @@ connectDB()
 const app = express()
 app.use(cors(corsConfig))
 
-//verificar en deploy
-console.log('FRONTEND_URL', process.env.FRONTEND_URL)
-
 //Logging
 app.use(morgan('dev'))
 
