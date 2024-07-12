@@ -5,7 +5,6 @@ import { connectDB } from "./config/db"
 
 import projectRoutes from './routes/projectRoutes'
 import authRoutes from './routes/authRoutes'
-import { corsConfig } from "./config/cors"
 import morgan from "morgan"
 
 dotenv.config()
@@ -13,7 +12,9 @@ dotenv.config()
 connectDB()
 
 const app = express()
-app.use(cors(corsConfig))
+app.use(cors())
+
+console.log('frontend', process.env.FRONTEND_URL)
 
 //Logging
 app.use(morgan('dev'))
